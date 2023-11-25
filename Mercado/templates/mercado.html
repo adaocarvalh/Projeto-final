@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% for produto in produtos %}
+
+
+<p>{{produto.Categoria}} </p>
+<a href="{% url 'produto' id=produto.id %}">
+     <h4>{{produto.nome}} </h4>
+</a>
+<p>{{produto.preço}} </p>
+<a href="{% url 'produto' id=produto.id %}"><img src="{{produto.imagem.url}}" alt="Imagem de produto{{produto.nome}}" width="400"></a>
+
+{% endfor %}
+{% endblock %}
